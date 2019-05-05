@@ -3,18 +3,7 @@
 #a simple CTF bash script
 
 # Welcome Screen
-echo " 
-
- ######                          ######                                     
- #     #   ##    ####  #    #    #     #   ##   #####   ####  ###### #####  
- #     #  #  #  #      #    #    #     #  #  #  #    # #    # #      #    # 
- ######  #    #  ####  ######    ######  #    # #    # #      #####  #    # 
- #     # ######      # #    #    #     # ###### #    # #  ### #      #####  
- #     # #    # #    # #    #    #     # #    # #    # #    # #      #   #  
- ######  #    #  ####  #    #    ######  #    # #####   ####  ###### #    # 
-                                                                            
-
-"
+echo "Welcome to the Bash Badger"
 
 # Create New Project Directories 
 echo "Enter CTF or Project Name"
@@ -26,18 +15,7 @@ cd $Project
 touch bash-results.txt
 
 # Setup results text file 
-echo " 
-
- ######                          ######                                     
- #     #   ##    ####  #    #    #     #   ##   #####   ####  ###### #####  
- #     #  #  #  #      #    #    #     #  #  #  #    # #    # #      #    # 
- ######  #    #  ####  ######    ######  #    # #    # #      #####  #    # 
- #     # ######      # #    #    #     # ###### #    # #  ### #      #####  
- #     # #    # #    # #    #    #     # #    # #    # #    # #      #   #  
- ######  #    #  ####  #    #    ######  #    # #####   ####  ###### #    # 
-                                                                            
-
-" >> bash-results.txt
+echo " Bash Badger CTF automation tool" >> bash-results.txt
 echo "  " >> bash-results.txt
 
 
