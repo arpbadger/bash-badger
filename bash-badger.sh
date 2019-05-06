@@ -4,6 +4,12 @@
 
 # Welcome Screen
 echo " Bash Badger CTF Automation Tool"
+if [ "$1" == "" ]
+then 
+echo "You didn't supply a command" 
+echo "Usage: ./bash-badger [command]"
+exit
+fi
 
 # Create New Project Directories 
 echo "Enter CTF or Project Name"
