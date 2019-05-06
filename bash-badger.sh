@@ -21,10 +21,12 @@ else
 
 	# Open the help page
 	if [ "$1" == "--help" ];
+		then	
 		echo "--full | run all 3 scans (arp-scan,nmap, dirb)"
 		echo "--nordirb | don't run dirb"
 		echo "--about| display information about the script"
 		echo "--help | dispaly this help page "
+	fi
 
 	# Run a full scan 
 	if [ "$1" == "--full" ];
@@ -69,12 +71,12 @@ else
 		echo " Dirb scan for " $Project >> bash-results.txt
 		echo "==============================================" >> bash-results.txt
 		dirb 'http://'$Target -S >> bash-results.txt
-		fi
+	fi
 
 	# Run without a dirb scan 
 	if [ "$1" == "--nodirb" ];
 		then 
-			
+
 		# Create New Project Directories 
 		echo "Enter CTF or Project Name"
 		read Project
@@ -107,9 +109,10 @@ else
 		echo "==============================================" >> bash-results.txt
 		echo " " >> bash-results.txt 
 		nmap -sS -sV -A -O $Target >> bash-results.txt
+	fi
 
 # Exit the script 
-else 
+ 
 	echo "Thanks for runing bash-badger"
 	echo "for help, enter --help"
-	fi
+fi
