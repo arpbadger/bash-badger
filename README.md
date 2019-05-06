@@ -13,10 +13,10 @@ First, Git Clone or install the script to your attack machine. Second, in order 
 ## Commands 
 The syntax for bash badger is ./bash-badger.sh [command]. It only takes one argument. The current options are listed below.
 
---full | run all 3 scans (arp-scan,nmap, dirb)"
---nordirb | don't run dirb"
---about| display information about the script"
---help | dispaly this help page "
+    --full | run all 3 scans (arp-scan,nmap, dirb)
+    --nordirb | don't run dirb
+    --about| display information about the script
+    --help | dispaly this help page 
 
 ## Configurations 
 The script needs one modification to work out of the box. By default, the script opens up the saved txt documentation for your scans in sublime text (sorry this is a small personal text and sublime rules). If you don't use sublme text, edit the script with the name of your editor where you see "subl". By default, Kali linux has leafpad installed, so you can replace it with "leafpad"
