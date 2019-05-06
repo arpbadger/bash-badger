@@ -42,10 +42,16 @@ nmap -sS -sV -A -O $Target >> bash-results.txt
 
 
 #Dirb targets
-echo "Do you Want to Run Dirb (Y/N) "
+echo "Do you Want to Run Dirb (1 for yes, 0 for no) "
 read webscan
-if webscan == 'Y'
-	do echo "running dirb" && dirb 'Http://'$Target
+if [ $webscan -gt 0 ]; then
+	echo "running dirb"
+	echo " Dirb scan for " $Project >> bash-results.txt
+	echo "==============================================" >> bash-results.txt
+	dirb 'http://'$Target -S >> bash-results.txt
+else 
+	echo "Thanks for running bash Badger"
+fi
 #cho "running Dirb on server"
 #b http://
 
