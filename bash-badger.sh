@@ -3,55 +3,56 @@
 #a simple CTF bash script
 
 # Welcome Screen
+echo " Bash Badger CTF Automation Tool"
 
-echo " Welcome to the Bash Badger"
 # Create New Project Directories 
 echo "Enter CTF or Project Name"
 read Project
 echo "Creating Project Folder"
 mkdir $Project 
-#touch /$Project/$Project"_arp.txt"
+cd $Project
+#touch $Project"_arp.txt"
+touch bash-results.txt
+
+# Setup results text file 
+echo " Bash Badger CTF Automation Tool" >> bash-results.txt
+echo "  " >> bash-results.txt
+
 
 # Arp scan for targets, add results to file 
 echo "Running arp-scan"
-arp-scan -l >> /$Project/$Project"_arp.txt"
-
+#arp-scan -l > /$Project/$Project"_arp.txt" 
+echo "Arp scan for"$Project >> bash-results.txt
+echo "==============================================" >> bash-results.txt
+echo " " >> bash-results.txt
+arp-scan -l >> bash-results.txt
 echo "arp-scan results in /local/arp.txt"
-subl /$Project/$Project"_arp.txt"
+echo " " >> bash-results.txt
+
+
+#Nmap targets 
+subl bash-results.txt
 echo "Enter the Target"
 read Target 
- 
-# Nmap targets
+
+echo "Nmap scan for"$Project >> bash-results.txt
+echo "==============================================" >> bash-results.txt
+echo " " >> bash-results.txt 
+nmap -sS -sV -A -O $Target >> bash-results.txt
 
 
-#echo hello | grep hi ; echo $?
+#Dirb targets
+echo "Do you Want to Run Dirb (1 for yes, 0 for no) "
+read webscan
+if [ $webscan -gt 0 ]; then
+	echo "running dirb"
+	echo " Dirb scan for " $Project >> bash-results.txt
+	echo "==============================================" >> bash-results.txt
+	dirb 'http://'$Target -S >> bash-results.txt
+else 
+	echo "Thanks for running bash Badger"
+fi
+#cho "running Dirb on server"
+#b http://
 
-
-# From https://linuxhint.com/read_file_line_by_line_bash/
-filename='/$Project/$Project"_arp.txt"'
-n=1
-while read line; do
-
-if grep 192 ; echo $? == 0:
-	do 
-	# for each line grep finds matches the text, save to a variable 
-# reading each line
-echo "Line No. $n : $line"
-n=$((n+1))
-done < $filename
-
-
-# Nmap targets 
-#for line in /$Project/$Project"_arp.txt":
-#do 
-#done 
-
-
-#
-#
-#
-#
-#
-#
-#
-#
+echo "Thanks for using the Bash Badger"
