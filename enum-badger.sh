@@ -47,7 +47,12 @@ if [ "$1" == "--local" ];
     printf "\nWhat is the SSH password for then target machine?"
     read password
 
+    # SSH scripts to be run 
+    script1 = "pwd; ls"
+
     # SSH into the target machine
     printfn "\nAttempting to SSH into the target machine"
-    ssh $login@$address $password
+    #ssh -o StrictHostKeyChecking=no -l username 
+    ssh -o StrictHostKeyChecking=no $login@$address $password
+    $script1  >> enum-badger-results.txt
     fi
