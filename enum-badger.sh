@@ -40,6 +40,8 @@ if [ "$1" == "--local" ];
     printf "${GREEN}\nresults file created at $PWD+enum-badger-results.txt ${RESET}"
 
     # Get ssh credentials
+    printf "\nWhat is the Ipv4 Address of the target machine?"
+    read address
     printf "\nWhat is the SSH username for the target machine?"
     read login
     printf "\nWhat is the SSH password for then target machine?"
@@ -47,5 +49,5 @@ if [ "$1" == "--local" ];
 
     # SSH into the target machine
     printfn "\nAttempting to SSH into the target machine"
-
+    ssh $login@$address $password
     fi
