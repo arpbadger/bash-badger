@@ -12,7 +12,8 @@ echo "What should we name your project folder?"
 read project 
 mkdir $project 
 cd $project
-pwd | read project-directory
-echo "project folder created at $project-directory"
+#pwd | read project-directory
+var = $(pwd)
+echo "project folder created at $var"
 
 # Get option types
