@@ -31,7 +31,7 @@ if [ "$1" == "--local" ];
     then
 
     # Get project information, and create directories
-    echo "What should we name your project folder?"
+    printf "What should we name your project folder?"
     read project
     mkdir $project
     cd $project
