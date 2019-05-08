@@ -2,6 +2,7 @@
 #enum-badger
 
 # A CTF automation tool for enumerating Linux Machines
+# Under Development 
 
 # Colorized Output Settings
 RESET="\033[00m"       # Normal
@@ -31,7 +32,7 @@ if [ "$1" == "--local" ];
     then
 
     # Get project information, and create directories
-    echo "What should we name your project folder?"
+    printf "What should we name your project folder?"
     read project
     mkdir $project
     cd $project
@@ -47,12 +48,12 @@ if [ "$1" == "--local" ];
     printf "\nWhat is the SSH password for then target machine?"
     read password
 
-    # SSH scripts to be run 
+    # SSH scripts to be run
     script1 = "pwd; ls"
 
     # SSH into the target machine
     printfn "\nAttempting to SSH into the target machine"
-    #ssh -o StrictHostKeyChecking=no -l username 
+    #ssh -o StrictHostKeyChecking=no -l username
     ssh -o StrictHostKeyChecking=no $login@$address $password
     $script1  >> enum-badger-results.txt
     fi

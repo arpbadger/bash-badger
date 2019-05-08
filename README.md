@@ -1,3 +1,5 @@
+** Disclaimer: I know this is bare bones, this is very much a work in progress
+
 Bash Badger is a set of basic bash scripts for automating CTF scanning. At its core, the tools are a simple one step process for running all the basic CTF tools that are pre loaded on Kali Linux. These tools include arp-scan, nmap, and dirb. arp-scan is used for target discovery, nmap for port and service enumeration, and dirb for webserver enumeration. Currently, there are two scripts bash-badger and enum-badger
 
 ## Installation
