@@ -19,7 +19,7 @@ def add_target():
     #script1 = target
 
     #subprocess.call(['bash',script3,script4])
-    subprocess.call([script])
+    subprocess.call([script], shell=True)
 
 root = Tk()
 
