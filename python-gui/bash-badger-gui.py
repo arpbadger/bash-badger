@@ -2,8 +2,7 @@
 # A Gui interface for the bash badger scripts
 
 from Tkinter import *
-import subprocess
-from subprocess import call
+import subprocess as sub
 import sys, os
 
 target = ""
@@ -19,7 +18,7 @@ def add_target():
     #script1 = target
 
     #subprocess.call(['bash',script3,script4])
-    subprocess.call([script], shell=True)
+    sub.call([script], shell=True)
 
 root = Tk()
 
