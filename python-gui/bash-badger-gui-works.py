@@ -16,7 +16,9 @@ def add_target():
 
     script = 'nmap '+target
     script1 = str(script)
-    script2 ='./bash-badger.sh'
+
+    # This is the goal of this GUI, run this ./bash-badger.sh scrip
+    script2 ='./bash-badger.sh'    # Not currently running, either cannot find script or does not have permission to run
 
     #subprocess.call(['bash',script3,script4])
     sub.call([script2], shell=True)
