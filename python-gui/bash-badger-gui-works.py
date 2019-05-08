@@ -14,11 +14,12 @@ def add_target():
     target = e.get()
     print target
 
-    script = 'nmap 10.0.2.3'
-    #script1 = target
+    script = 'nmap '+target
+    script1 = str(script)
+    script2 ='./bash-badger.sh'
 
     #subprocess.call(['bash',script3,script4])
-    sub.call([script], shell=True)
+    sub.call([script2], shell=True)
 
 root = Tk()
 
@@ -32,7 +33,7 @@ e = Entry(root)
 e.grid(row=2, column=1)
 
 # Create 'add target' button
-b = Button(root,text='Add Target',command = add_target)
+b = Button(root,text='Run Nmap',command = add_target)
 b.grid(row=10, column=0)
 
 
